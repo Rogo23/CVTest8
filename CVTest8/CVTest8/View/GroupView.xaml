@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CVTest8.View.GroupView"
              xmlns:vm="clr-namespace:CVTest8.ViewModel"
+             xmlns:markups="clr-namespace:CVTest8.Markups"
              BackgroundColor="#000044"
              Title="Group CollectionView Testing">
 
@@ -11,7 +12,7 @@
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
-        <Grid Margin="0,20">
+        <Grid Margin="10,20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
@@ -26,16 +27,34 @@
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="{markups:OnScreenSize DefaultSize='45', iPod='45', iPhoneSE='50', iPhoneXR='50', iPhoneX='55', 
+                    iPhone13='60', iPhone7p='60', iPhone11pm='60', iPhone13pm='60', iPadMini='100', iPad9p7='110', iPad='120', iPadAir='130', 
+                    iPad11='130', iPad12p9='140', Nexus1='60', NexusR='60', Nexus7R='100', Pixel2R='80', Pixel3R='85', GalaxyS8='80', Nexus6P='80', 
+                    Pixel3XL='90', PixelC='150'}" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <Image Grid.Column="0" Source="{Binding ImageUrl}" WidthRequest="50" HeightRequest="50" />
+                            <Image Grid.Column="0" Source="{Binding ImageUrl}" 
+                                   WidthRequest="{markups:OnScreenSize DefaultSize='30', iPod='40', iPhoneSE='45', iPhoneXR='45', iPhoneX='50', 
+                    iPhone13='55', iPhone7p='55', iPhone11pm='55', iPhone13pm='55', iPadMini='90', iPad9p7='95', iPad='100', iPadAir='110', 
+                    iPad11='120', iPad12p9='130', Nexus1='45', NexusR='50', Nexus7R='95', Pixel2R='65', Pixel3R='70', GalaxyS8='70', Nexus6P='70', 
+                    Pixel3XL='80', PixelC='120'}" 
+                                   HeightRequest="{markups:OnScreenSize DefaultSize='30', iPod='40', iPhoneSE='45', iPhoneXR='45', iPhoneX='50', 
+                    iPhone13='55', iPhone7p='55', iPhone11pm='55', iPhone13pm='55', iPadMini='90', iPad9p7='95', iPad='100', iPadAir='110', 
+                    iPad11='120', iPad12p9='130', Nexus1='45', NexusR='50', Nexus7R='95', Pixel2R='65', Pixel3R='70', GalaxyS8='70', Nexus6P='70', 
+                    Pixel3XL='80', PixelC='120'}" />
 
                             <StackLayout Grid.Column="1" Orientation="Vertical">
-                                <Label Text="{Binding ProductName}" TextColor="White" FontSize="22" FontAttributes="Bold"  />
-                                <Label Text="{Binding ProductDescription}" TextColor="#00ffae" FontSize="18" FontAttributes="Bold" />
-                                <Label Text="{Binding Price, StringFormat='${0}'}" TextColor="#00ffae" FontSize="16" FontAttributes="Bold" />
+                                <Label Text="{Binding ProductName}" TextColor="White" FontAttributes="Bold" 
+                                       FontSize="{markups:OnScreenSize DefaultSize='12', iPod='16', iPhoneSE='16', iPhoneXR='18', iPhoneX='20', iPhone13='20', 
+                        iPhone7p='20', iPhone11pm='20', iPhone13pm='20', iPadMini='32', iPad9p7='32', iPad='32', iPadAir='32', iPad11='40', iPad12p9='44', Nexus1='17', 
+                        NexusR='20', Nexus7R='28', Pixel2R='22', Pixel3R='22', GalaxyS8='18', Nexus6P='22', Pixel3XL='22', PixelC='32'}" />
+                                <Label Text="{Binding ProductDescription}" TextColor="#00ffae" FontAttributes="Bold"  FontSize="{markups:OnScreenSize DefaultSize='12', iPod='12', iPhoneSE='12', iPhoneXR='14', iPhoneX='16', iPhone13='18', 
+                        iPhone7p='18', iPhone11pm='18', iPhone13pm='18', iPadMini='30', iPad9p7='30', iPad='30', iPadAir='30', iPad11='36', iPad12p9='40', Nexus1='15', 
+                        NexusR='18', Nexus7R='24', Pixel2R='20', Pixel3R='20', GalaxyS8='16', Nexus6P='20', Pixel3XL='20', PixelC='28'}" />
+                                <Label Text="{Binding Price, StringFormat='${0}'}" TextColor="#00ffae" FontAttributes="Bold"  FontSize="{markups:OnScreenSize DefaultSize='12', iPod='11', iPhoneSE='11', iPhoneXR='12', iPhoneX='14', iPhone13='16', 
+                        iPhone7p='16', iPhone11pm='16', iPhone13pm='16', iPadMini='28', iPad9p7='28', iPad='28', iPadAir='28', iPad11='32', iPad12p9='36', Nexus1='13', 
+                        NexusR='16', Nexus7R='20', Pixel2R='18', Pixel3R='18', GalaxyS8='14', Nexus6P='18', Pixel3XL='18', PixelC='24'}"/>
                             </StackLayout>
 
                         </Grid>
@@ -44,7 +63,9 @@
                 <CollectionView.GroupHeaderTemplate>
                     <DataTemplate>
                         <Label Text="{Binding Name}"
-                           FontSize="26"
+                           FontSize="{markups:OnScreenSize DefaultSize='12', iPod='20', iPhoneSE='22', iPhoneXR='22', iPhoneX='22', iPhone13='22', 
+                        iPhone7p='22', iPhone11pm='22', iPhone13pm='22', iPadMini='38', iPad9p7='38', iPad='42', iPadAir='42', iPad11='46', iPad12p9='50', Nexus1='20', 
+                        NexusR='22', Nexus7R='36', Pixel2R='26', Pixel3R='26', GalaxyS8='24', Nexus6P='26', Pixel3XL='24', PixelC='40'}"
                            FontAttributes="Bold"
                            TextColor="#00ffae"/>
                     </DataTemplate>
