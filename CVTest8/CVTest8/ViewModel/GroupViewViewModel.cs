@@ -33,6 +33,12 @@ namespace CVTest8.ViewModel
                 new Product(){ProductName="Unlock All Categories", ProductDescription="Unlocks all categories", Price=10, ImageUrl="categoryall", ProductID="categoryall"},
             }));
 
+            PG.Add(new ProductGroup("Subscription Options", new List<Product>
+            {
+                new Product(){ProductName="Preliminary Subscription", ProductDescription="Unlocks all categories plus 5 of each boost type per month",Price=30, ImageUrl="subscription1", ProductID="subscription1"},
+                new Product(){ProductName="Main Event Subscription", ProductDescription="Unlocks all categories plus 15 of each boost type per month",Price=60, ImageUrl="subscription2", ProductID="subscription2"},
+            }));
+
             PG.Add(new ProductGroup("Rewarded Advertisement", new List<Product>
             {
                 new Product(){ProductName="Video Advertisement", ProductDescription="Provides 3 random boosts after watching",Price=0, ImageUrl="rewardedAd", ProductID="rewardedAd"}

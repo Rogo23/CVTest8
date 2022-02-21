@@ -11,11 +11,13 @@ namespace CVTest8.ViewModel
     {
         public Command GoSimple { get; }
         public Command GoGroup { get; }
+        public Command GoList { get; }
         
         public MainPageViewModel()
         {
             GoSimple = new Command(Simple);
             GoGroup = new Command(Group);
+            GoList = new Command(List);
             
         }
 
@@ -31,6 +33,14 @@ namespace CVTest8.ViewModel
             var navPage = new NavigationPage(new GroupView());
 
             await Application.Current.MainPage.Navigation.PushAsync(navPage);
+        }
+
+        private async void List()
+        {
+            var navPage = new NavigationPage(new GroupedListView());
+
+            await Application.Current.MainPage.Navigation.PushAsync(navPage);
+
         }
     }
 

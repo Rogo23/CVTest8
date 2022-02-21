@@ -9,6 +9,7 @@
         <Label Text="Collection View Testing" TextColor="White" FontAttributes="Bold" FontSize="30" HorizontalTextAlignment="Center"/>
         <Button Text="Simple Collection View" Command="{Binding GoSimple}" />
         <Button Text="Group Collection View" Command="{Binding GoGroup}" />
+        <Button Text="Group List View" Command="{Binding GoList}" />
     </StackLayout>
 
 </ContentPage>
