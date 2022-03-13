@@ -1,12 +1,75 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CVTest8.View.Page1">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="CVTest8.View.GroupedListView" 
+             xmlns:vm="clr-namespace:CVTest8.ViewModel"
+             xmlns:markups="clr-namespace:CVTest8.Markups"
+             BackgroundColor="#000044"
+             Title="Group ListView Testing">
+    
+    <ContentPage.BindingContext>
+        <vm:GroupedListViewViewModel />
+    </ContentPage.BindingContext>
+
+    <ListView ItemsSource="{Binding LV}" IsGroupingEnabled="True" SeparatorVisibility="None" IsPullToRefreshEnabled="True" 
+              
+              RowHeight="{markups:OnScreenSize DefaultSize='30', iPod='40', iPhoneSE='45', iPhoneXR='45', iPhoneX='50', 
+                                iPhone13='55', iPhone7p='55', iPhone11pm='55', iPhone13pm='55', iPadMini='90', iPad9p7='95', iPad='100', iPadAir='110', 
+                                iPad11='120', iPad12p9='130', Nexus1='70', NexusR='80', Nexus7R='110', Pixel2R='90', Pixel3R='90', GalaxyS8='80', Nexus6P='80', 
+                                Pixel3XL='90', PixelC='140'}">
+        <ListView.Header>
+            <Label Margin="0,20,0,0" Text="UWT Store" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" VerticalTextAlignment="Center"
+                   FontSize="{markups:OnScreenSize DefaultSize='12', iPod='16', iPhoneSE='16', iPhoneXR='18', iPhoneX='20', iPhone13='20', 
+                        iPhone7p='20', iPhone11pm='20', iPhone13pm='20', iPadMini='32', iPad9p7='32', iPad='32', iPadAir='32', iPad11='40', iPad12p9='44', Nexus1='24', 
+                        NexusR='26', Nexus7R='32', Pixel2R='26', Pixel3R='27', GalaxyS8='26', Nexus6P='24', Pixel3XL='26', PixelC='38'}" />
+        </ListView.Header>
+        <ListView.GroupHeaderTemplate>
+            <DataTemplate>
+                <ViewCell Height="10">
+                    <Grid Padding="10,0,10,10" >
+                        <Label Text="{Binding Name}" TextColor="#00ffae" FontAttributes="Bold" VerticalTextAlignment="End"
+                            FontSize="{markups:OnScreenSize DefaultSize='12', iPod='16', iPhoneSE='16', iPhoneXR='18', iPhoneX='20', iPhone13='20', 
+                                iPhone7p='20', iPhone11pm='20', iPhone13pm='20', iPadMini='32', iPad9p7='32', iPad='32', iPadAir='32', iPad11='40', iPad12p9='44', Nexus1='20', 
+                                NexusR='22', Nexus7R='30', Pixel2R='24', Pixel3R='25', GalaxyS8='24', Nexus6P='22', Pixel3XL='24', PixelC='34'}" />
+                    </Grid>
+                 </ViewCell>
+            </DataTemplate>
+         </ListView.GroupHeaderTemplate>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Margin="10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{markups:OnScreenSize DefaultSize='45', iPod='45', iPhoneSE='50', iPhoneXR='50', iPhoneX='55', 
+                                iPhone13='60', iPhone7p='60', iPhone11pm='60', iPhone13pm='60', iPadMini='100', iPad9p7='110', iPad='120', iPadAir='130', 
+                                iPad11='130', iPad12p9='140', Nexus1='60', NexusR='70', Nexus7R='100', Pixel2R='80', Pixel3R='80', GalaxyS8='70', Nexus6P='65', 
+                                Pixel3XL='80', PixelC='120'}" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="{Binding ImageUrl}"
+                            WidthRequest="{markups:OnScreenSize DefaultSize='30', iPod='40', iPhoneSE='45', iPhoneXR='45', iPhoneX='50', 
+                                iPhone13='55', iPhone7p='55', iPhone11pm='55', iPhone13pm='55', iPadMini='90', iPad9p7='95', iPad='100', iPadAir='110', 
+                                iPad11='120', iPad12p9='130', Nexus1='55', NexusR='65', Nexus7R='95', Pixel2R='70', Pixel3R='70', GalaxyS8='65', Nexus6P='60', 
+                                Pixel3XL='75', PixelC='110'}" 
+                            HeightRequest="{markups:OnScreenSize DefaultSize='30', iPod='40', iPhoneSE='45', iPhoneXR='45', iPhoneX='50', 
+                                iPhone13='55', iPhone7p='55', iPhone11pm='55', iPhone13pm='55', iPadMini='90', iPad9p7='95', iPad='100', iPadAir='110', 
+                                iPad11='120', iPad12p9='130', Nexus1='55', NexusR='65', Nexus7R='95', Pixel2R='70', Pixel3R='70', GalaxyS8='65', Nexus6P='60', 
+                                Pixel3XL='75', PixelC='110'}" />
+                        <StackLayout Grid.Column="1" Orientation="Vertical">
+                            <Label Text="{Binding ProductName}" TextColor="White" FontAttributes="Bold" VerticalTextAlignment="Center"
+                            FontSize="{markups:OnScreenSize DefaultSize='12', iPod='16', iPhoneSE='16', iPhoneXR='18', iPhoneX='20', iPhone13='20', 
+                                iPhone7p='20', iPhone11pm='20', iPhone13pm='20', iPadMini='32', iPad9p7='32', iPad='32', iPadAir='32', iPad11='40', iPad12p9='44', Nexus1='18', 
+                                NexusR='20', Nexus7R='26', Pixel2R='22', Pixel3R='23', GalaxyS8='20', Nexus6P='20', Pixel3XL='22', PixelC='30'}" />
+                            <Label Text="{Binding ProductDescription}" TextColor="#00ffae" FontAttributes="Bold" VerticalTextAlignment="Center" FontSize="{markups:OnScreenSize DefaultSize='12', iPod='12', iPhoneSE='12', iPhoneXR='14', iPhoneX='16', iPhone13='18', 
+                                iPhone7p='18', iPhone11pm='18', iPhone13pm='18', iPadMini='30', iPad9p7='30', iPad='30', iPadAir='30', iPad11='36', iPad12p9='40', Nexus1='14', 
+                                NexusR='18', Nexus7R='24', Pixel2R='20', Pixel3R='21', GalaxyS8='18', Nexus6P='18', Pixel3XL='20', PixelC='28'}" />
+                        </StackLayout>
+                    </Grid>
+                    
+                </ViewCell>
+                
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
 </ContentPage>

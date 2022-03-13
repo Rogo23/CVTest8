@@ -45,14 +45,14 @@
                     Pixel3XL='80', PixelC='120'}" />
 
                             <StackLayout Grid.Column="1" Orientation="Vertical">
-                                <Label Text="{Binding ProductName}" TextColor="White" FontAttributes="Bold" 
+                            <Label Grid.Column="1" Text="{Binding ProductName}" TextColor="White" FontAttributes="Bold" 
                                        FontSize="{markups:OnScreenSize DefaultSize='12', iPod='16', iPhoneSE='16', iPhoneXR='18', iPhoneX='20', iPhone13='20', 
                         iPhone7p='20', iPhone11pm='20', iPhone13pm='20', iPadMini='32', iPad9p7='32', iPad='32', iPadAir='32', iPad11='40', iPad12p9='44', Nexus1='17', 
                         NexusR='20', Nexus7R='28', Pixel2R='22', Pixel3R='22', GalaxyS8='18', Nexus6P='22', Pixel3XL='22', PixelC='32'}" />
-                                <Label Text="{Binding ProductDescription}" TextColor="#00ffae" FontAttributes="Bold"  FontSize="{markups:OnScreenSize DefaultSize='12', iPod='12', iPhoneSE='12', iPhoneXR='14', iPhoneX='16', iPhone13='18', 
+                            <Label Grid.Column="1" Text="{Binding ProductDescription}" TextColor="#00ffae" FontAttributes="Bold"  FontSize="{markups:OnScreenSize DefaultSize='12', iPod='12', iPhoneSE='12', iPhoneXR='14', iPhoneX='16', iPhone13='18', 
                         iPhone7p='18', iPhone11pm='18', iPhone13pm='18', iPadMini='30', iPad9p7='30', iPad='30', iPadAir='30', iPad11='36', iPad12p9='40', Nexus1='15', 
                         NexusR='18', Nexus7R='24', Pixel2R='20', Pixel3R='20', GalaxyS8='16', Nexus6P='20', Pixel3XL='20', PixelC='28'}" />
-                                <Label Text="{Binding Price, StringFormat='${0}'}" TextColor="#00ffae" FontAttributes="Bold"  FontSize="{markups:OnScreenSize DefaultSize='12', iPod='11', iPhoneSE='11', iPhoneXR='12', iPhoneX='14', iPhone13='16', 
+                            <Label Grid.Column="1" Text="{Binding Price, StringFormat='${0}'}" TextColor="#00ffae" FontAttributes="Bold"  FontSize="{markups:OnScreenSize DefaultSize='12', iPod='11', iPhoneSE='11', iPhoneXR='12', iPhoneX='14', iPhone13='16', 
                         iPhone7p='16', iPhone11pm='16', iPhone13pm='16', iPadMini='28', iPad9p7='28', iPad='28', iPadAir='28', iPad11='32', iPad12p9='36', Nexus1='13', 
                         NexusR='16', Nexus7R='20', Pixel2R='18', Pixel3R='18', GalaxyS8='14', Nexus6P='18', Pixel3XL='18', PixelC='24'}"/>
                             </StackLayout>
