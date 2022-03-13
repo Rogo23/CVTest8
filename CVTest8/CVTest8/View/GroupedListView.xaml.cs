@@ -16,10 +16,6 @@ namespace CVTest8.View
         {
             InitializeComponent();
 
-            storePage.RefreshCommand = new Command(() =>
-            {
-
-            })
         }
     }
 }
